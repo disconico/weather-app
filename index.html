@@ -7,18 +7,57 @@
     <title>My Weather</title>
   <script defer src="main.js"></script></head>
   <body>
-    <h3>Welcome to the Awesome application</h3>
 
-    <label for="search--city">Search City:</label>
-    <input class="input--field" type="search" id="search--city" name="city">
-    
-    <button class="search--btn">Search</button>
 
-<div class="render--weather">
-    <div class="city--name"></div>
-    <div class="city--description"></div>
-    <div class="city--temperature"></div>
-</div>
 
+<main>
+    <div class="weather-info">
+        <div class="weather-info_description"></div>
+        <div class="weather-info_city"></div>
+        <div class="weather-info_date"></div>
+        <div class="weather-info_time"></div>
+        <div class="weather-info_temperature"></div>
+        <div class="weather-info_icon">
+            <img class='info-icon' src="">
+        </div>
+        <div class="search-box">
+            <input class="input--field" type="search" id="search--city" name="city" placeholder="Search location...">
+            <button class="search--btn">Search</button>
+        </div>
+        <div class="error-msg"></div>
+    </div>
+    <div class="weather-details-container">
+        <div class="weather-details">
+            <div class="weather-details_icon"></div>
+            <div class="weather-details_info">
+                <div class="weather-details_label">Feels Like</div>
+                <div class="weather-details_data" id="feels-like"></div>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="weather-details_icon"></div>
+            <div class="weather-details_info">
+                <div class="weather-details_label">Humidity</div>
+                <div class="weather-details_data" id="humidity"></div>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="weather-details_icon"></div>
+            <div class="weather-details_info">
+                <div class="weather-details_label">Chance of Rain</div>
+                <div class="weather-details_data" id="rain"></div>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="weather-details_icon"></div>
+            <div class="weather-details_info">
+                <div class="weather-details_label">Wind Speed</div>
+                <div class="weather-details_data" id="wind"></div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<div class="forecast"></div>
   </body>
 </html>
