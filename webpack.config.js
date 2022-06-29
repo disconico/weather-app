@@ -30,11 +30,6 @@ module.exports = {
         generator: {
           filename: 'images/[hash][ext][query]',
         },
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
