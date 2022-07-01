@@ -389,10 +389,8 @@ template {
 
 
 
-@font-face {
-    font-family: montserrat;
-    src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 
 *,
 *::before,
@@ -412,9 +410,11 @@ html {
 
 body {
     font-family: montserrat, sans-serif;
+    padding: 8rem;
     min-width: 100vh;
     min-height: 100vh;
-    background-image: url('./assets/images/background.jpg');
+    background-image: linear-gradient(rgba(0,0,0, 0.4),
+    rgba(0,0,0, 0.4)),url('./assets/images/background.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -477,15 +477,21 @@ body {
 .weather-details_icon svg {
     width: 3rem;
 }
-
-main {
+ main,
+.forecast-daily,
+.forecast-hourly {
     font-size: 2rem;
-    padding: 2rem;
+} 
+
+.forecast-hourly {
+    padding-top: 0;
 }
 
-.days{
+.days,
+.hours-grp{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 /* Next & previous buttons */
@@ -518,4 +524,87 @@ main {
 
   .active, .dot:hover {
     background-color: white;
+  }
+
+  /* Main */
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .forecast-daily-title,
+  .forecast-hourly-title {
+    font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  width: 75PX;
+  border: 2px solid white;
+  margin-bottom: 1rem;
+  text-align: center;
+  }
+
+  .hours-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 2rem 0rem 1rem 0rem;
+  }
+
+
+  .weather-info {
+    max-width: 55%;
+  }
+
+  .weather-info_description {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .weather-info_city{
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .weather-info_date,
+  .weather-info_time {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .weather-info_temperature {
+    margin-bottom: 0.2rem;
+    margin-top: 2rem;
+
+    font-size: 6rem;
+    font-weight: 700;
+  }
+
+  .weather-details {
+    margin-bottom: 3rem;
+    display: flex;
+  }
+
+  .weather-details_icon{
+    width: 3rem;
+    margin-right: 1rem;
+  }
+
+  .weather-details_label {
+    margin-bottom: 0.6rem;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .weather-details_data {
+    font-size: 2.6rem;
+    font-weight: 600;
+  }
+
+  .info-icon {
+    width: 70%;
+    margin-left: 15%;
   }

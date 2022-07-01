@@ -21,6 +21,7 @@ const display = (() => {
     cityDesc.textContent = `${weatherData.current.weather[0].description}`;
     cityTemperature.textContent = `${Math.round(weatherData.current.temp)} °C`;
     cityIcon.src = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`;
+    cityIcon.setAttribute('draggable', 'false');
     cityDate.textContent = `${format(new Date(), 'iii, do LLL yy')}`;
     cityTime.textContent = `${format(new Date(), 'p')}`;
 
@@ -48,6 +49,7 @@ const display = (() => {
     day1MaxTemp.textContent = `${Math.round(weatherData.daily[1].temp.max)} °C`;
     day1MinTemp.textContent = `${Math.round(weatherData.daily[1].temp.min)} °C`;
     day1Icon.src = `http://openweathermap.org/img/wn/${weatherData.daily[1].weather[0].icon}@2x.png`;
+    day1Icon.setAttribute('draggable', 'false');
 
     const day2DayName = document.querySelector('.day-name2');
     const day2MaxTemp = document.querySelector('.max-temp2');
@@ -60,6 +62,7 @@ const display = (() => {
     day2MaxTemp.textContent = `${Math.round(weatherData.daily[2].temp.max)} °C`;
     day2MinTemp.textContent = `${Math.round(weatherData.daily[2].temp.min)} °C`;
     day2Icon.src = `http://openweathermap.org/img/wn/${weatherData.daily[2].weather[0].icon}@2x.png`;
+    day2Icon.setAttribute('draggable', 'false');
 
     const day3DayName = document.querySelector('.day-name3');
     const day3MaxTemp = document.querySelector('.max-temp3');
@@ -72,6 +75,7 @@ const display = (() => {
     day3MaxTemp.textContent = `${Math.round(weatherData.daily[3].temp.max)} °C`;
     day3MinTemp.textContent = `${Math.round(weatherData.daily[3].temp.min)} °C`;
     day3Icon.src = `http://openweathermap.org/img/wn/${weatherData.daily[3].weather[0].icon}@2x.png`;
+    day3Icon.setAttribute('draggable', 'false');
 
     const day4DayName = document.querySelector('.day-name4');
     const day4MaxTemp = document.querySelector('.max-temp4');
@@ -84,6 +88,7 @@ const display = (() => {
     day4MaxTemp.textContent = `${Math.round(weatherData.daily[4].temp.max)} °C`;
     day4MinTemp.textContent = `${Math.round(weatherData.daily[4].temp.min)} °C`;
     day4Icon.src = `http://openweathermap.org/img/wn/${weatherData.daily[4].weather[0].icon}@2x.png`;
+    day4Icon.setAttribute('draggable', 'false');
 
     const day5DayName = document.querySelector('.day-name5');
     const day5MaxTemp = document.querySelector('.max-temp5');
@@ -96,6 +101,7 @@ const display = (() => {
     day5MaxTemp.textContent = `${Math.round(weatherData.daily[5].temp.max)} °C`;
     day5MinTemp.textContent = `${Math.round(weatherData.daily[5].temp.min)} °C`;
     day5Icon.src = `http://openweathermap.org/img/wn/${weatherData.daily[5].weather[0].icon}@2x.png`;
+    day5Icon.setAttribute('draggable', 'false');
 
     const day6DayName = document.querySelector('.day-name6');
     const day6MaxTemp = document.querySelector('.max-temp6');
@@ -108,6 +114,7 @@ const display = (() => {
     day6MaxTemp.textContent = `${Math.round(weatherData.daily[6].temp.max)} °C`;
     day6MinTemp.textContent = `${Math.round(weatherData.daily[6].temp.min)} °C`;
     day6Icon.src = `http://openweathermap.org/img/wn/${weatherData.daily[6].weather[0].icon}@2x.png`;
+    day6Icon.setAttribute('draggable', 'false');
 
     const day7DayName = document.querySelector('.day-name7');
     const day7MaxTemp = document.querySelector('.max-temp7');
@@ -120,6 +127,7 @@ const display = (() => {
     day7MaxTemp.textContent = `${Math.round(weatherData.daily[7].temp.max)} °C`;
     day7MinTemp.textContent = `${Math.round(weatherData.daily[7].temp.min)} °C`;
     day7Icon.src = `http://openweathermap.org/img/wn/${weatherData.daily[7].weather[0].icon}@2x.png`;
+    day7Icon.setAttribute('draggable', 'false');
 
     // Hourly display
     const hoursGrp = document.querySelector('.hours');
@@ -154,6 +162,7 @@ const display = (() => {
         hoursBlock.appendChild(hourIcon);
         const hourImg = document.createElement('img');
         hourImg.classList.add(`hour-img${i}`);
+        hourImg.setAttribute('draggable', 'false');
         hourImg.src = `http://openweathermap.org/img/wn/${weatherData.hourly[i].weather[0].icon}@2x.png`;
         hourIcon.appendChild(hourImg);
       }

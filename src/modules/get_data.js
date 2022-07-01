@@ -1,27 +1,37 @@
+import swal from 'sweetalert';
+
 const data = (() => {
   let cityLat = '';
   let cityLon = '';
-  // eslint-disable-next-line consistent-return
+
   async function getCoordinates(city) {
     try {
       const response = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=9d40f9d1ec0bd1dd18689980d2b0bd30`,
         { mode: 'cors' }
       );
-      const APIData = await response.json();
 
-      cityLat = await APIData.coord.lat;
-      cityLon = await APIData.coord.lon;
-
-      return APIData;
+      if (response.ok) {
+        const APIData = await response.json();
+        cityLat = await APIData.coord.lat;
+        cityLon = await APIData.coord.lon;
+        return APIData;
+      }
+      if (response.status === 404) {
+        swal({
+          text: 'Your city was not found, please try again.',
+          icon: 'error',
+          timer: 3000,
+        });
+        throw new Error('City not found');
+      }
+      throw new Error(`Other error: ${response.status}`);
     } catch (error) {
       console.log(error);
-      console.log('Break');
       return null;
     }
   }
 
-  // eslint-disable-next-line consistent-return
   async function getData() {
     try {
       const rep = await fetch(

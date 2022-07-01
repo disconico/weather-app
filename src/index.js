@@ -1,3 +1,4 @@
+import swal from 'sweetalert';
 import display from './modules/display';
 import data from './modules/get_data';
 import slider from './modules/slider';
@@ -10,6 +11,11 @@ const searchBtn = document.querySelector('.search--btn');
 searchBtn.addEventListener('click', async () => {
   cityInput = document.querySelector('.input--field').value;
   if (cityInput === '') {
+    swal({
+      text: 'Please enter a city!',
+      icon: 'info',
+      timer: 3000,
+    });
     console.log('Please enter a city');
     return;
   }
