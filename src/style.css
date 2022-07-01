@@ -383,7 +383,8 @@ template {
 
 
 :root {
-    --main-text-color: whitesmoke
+    --main-text-color: whitesmoke;
+    --orange-color : rgb(255,160,122)
 }
 
 
@@ -486,3 +487,35 @@ main {
     display: flex;
     flex-direction: row;
 }
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    width: auto;
+    /* padding: 16px; */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .prev:hover, .next:hover {
+    color: grey;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: var(--orange-color);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: white;
+  }
