@@ -26,7 +26,10 @@
                     placeholder="Search location...">
                 <div class="search--btn"></div>
             </div>
-            <div class="error-msg"></div>
+        </div>
+        <div class="quote">
+            <div class="quote-text"></div>
+            <div class="quote-author"></div>
         </div>
         <div class="weather-details-container">
             <div class="weather-details">
@@ -125,6 +128,17 @@
 
         </div>
     </main>
+    <div class="forecast-hourly">
+        <div class="forecast-hourly-title">Hourly</div>
+        <div class="hours-btn">
+            <a class="prev">&#10094;</a>
+            <span class="dot" id="1"></span>
+            <span class="dot" id="2"></span>
+            <span class="dot" id="3"></span>
+            <a class="next">&#10095;</a>
+        </div>
+        <div class="hours"></div>
+    </div>
     <div class="forecast-daily">
         <div class="forecast-daily-title">Daily</div>
         <div class="days">
@@ -186,17 +200,7 @@
             </div>
         </div>
     </div>
-    <div class="forecast-hourly">
-        <div class="forecast-hourly-title">Hourly</div>
-        <div class="hours-btn">
-            <a class="prev">&#10094;</a>
-            <span class="dot" id="1"></span>
-            <span class="dot" id="2"></span>
-            <span class="dot" id="3"></span>
-            <a class="next">&#10095;</a>
-        </div>
-        <div class="hours"></div>
-    </div>
+
     </div>
 </body>
 
