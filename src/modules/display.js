@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { formatInTimeZone } from 'date-fns-tz';
 import slider from './slider';
 
 const display = (() => {
@@ -22,8 +23,20 @@ const display = (() => {
     cityTemperature.textContent = `${Math.round(weatherData.current.temp)} °C`;
     cityIcon.src = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`;
     cityIcon.setAttribute('draggable', 'false');
-    cityDate.textContent = `${format(new Date(), 'iii, do LLL yy')}`;
-    cityTime.textContent = `${format(new Date(), 'p')}`;
+
+    const cityLocalDate = `${formatInTimeZone(
+      weatherData.current.dt * 1000,
+      weatherData.timezone,
+      'iii, do LLL yy'
+    )}`;
+    cityDate.textContent = cityLocalDate;
+
+    const cityLocalTime = `${formatInTimeZone(
+      weatherData.current.dt * 1000,
+      weatherData.timezone,
+      'p'
+    )}`;
+    cityTime.textContent = cityLocalTime;
 
     // Side display
     cityFeels.textContent = `${Math.round(weatherData.current.feels_like)} °C`;
@@ -146,10 +159,14 @@ const display = (() => {
 
         const hourTime = document.createElement('div');
         hourTime.classList.add(`hour-time${i}`);
-        hourTime.textContent = `${format(
-          new Date(weatherData.hourly[i].dt * 1000),
+
+        const hoursLocalTime = `${formatInTimeZone(
+          weatherData.hourly[i].dt * 1000,
+          weatherData.timezone,
           'h aaa'
         )}`;
+
+        hourTime.textContent = hoursLocalTime;
         hoursBlock.appendChild(hourTime);
 
         const hourTemp = document.createElement('div');
@@ -172,7 +189,15 @@ const display = (() => {
     slider.currentBlock(1);
   }
 
-  return { renderWeather };
+  function renderQuote(selectedQuote) {
+    const quoteText = document.querySelector('.quote-text');
+    const quoteAuthor = document.querySelector('.quote-author');
+
+    quoteText.textContent = `${selectedQuote.text}`;
+    quoteAuthor.textContent = `${selectedQuote.author}`;
+  }
+
+  return { renderWeather, renderQuote };
 })();
 
 export default display;

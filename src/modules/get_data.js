@@ -48,7 +48,24 @@ const data = (() => {
     }
   }
 
-  return { getCoordinates, getData };
+  async function getQuote() {
+    try {
+      const response = await fetch('https://type.fit/api/quotes');
+      const myQuotes = await response.json();
+
+      const randomQuote = parseInt(Math.random() * myQuotes.length, 10);
+      const selectedQuote = myQuotes[randomQuote];
+
+      return selectedQuote;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
+
+  getQuote();
+
+  return { getCoordinates, getData, getQuote };
 })();
 
 export default data;

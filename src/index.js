@@ -27,10 +27,14 @@ searchBtn.addEventListener('click', async () => {
 });
 
 window.addEventListener('load', async () => {
-  const cityCoordinates = await data.getCoordinates('Paris');
+  const cityCoordinates = await data.getCoordinates('Montreal');
   const weatherData = await data.getData(cityCoordinates);
   display.renderWeather(weatherData, cityCoordinates);
   slider.showBlock(1);
+
+  const quote = await data.getQuote();
+  console.log(quote);
+  display.renderQuote(quote);
 });
 
 window.addEventListener('click', (e) => {

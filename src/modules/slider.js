@@ -3,14 +3,16 @@ const slider = (() => {
   let blockIndex = 1;
 
   function showBlock(n) {
+    const nInt = parseInt(n, 10);
     let i;
     const myBlocks = document.getElementsByClassName('hours-grp');
     const dots = document.getElementsByClassName('dot');
-    if (n > myBlocks.length) {
+    if (nInt > myBlocks.length) {
       blockIndex = 1;
     }
-    if (n < 1) {
+    if (nInt < 1) {
       blockIndex = myBlocks.length;
+      console.log(blockIndex);
     }
     for (i = 0; i < myBlocks.length; i += 1) {
       myBlocks[i].style.display = 'none';
@@ -23,11 +25,13 @@ const slider = (() => {
   }
 
   function plusBlock(n) {
-    showBlock((blockIndex += n));
+    const nInt = parseInt(n, 10);
+    showBlock((blockIndex += nInt));
   }
 
   function currentBlock(n) {
-    showBlock((blockIndex = n));
+    const nInt = parseInt(n, 10);
+    showBlock((blockIndex = nInt));
   }
 
   return { showBlock, plusBlock, currentBlock };

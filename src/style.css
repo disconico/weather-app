@@ -404,6 +404,7 @@ html {
     box-sizing: border-box;
 
     font-size: 62.5%;
+    min-width: 800px;
 
 }
 
@@ -419,7 +420,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     /* background-color: black; */
     color: var(--main-text-color);
 }
@@ -458,7 +459,7 @@ body {
 .search-box input::placeholder{
     color: var(--main-text-color);
     opacity: 1;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .search--btn {
@@ -543,11 +544,15 @@ body {
   text-align: center;
   }
 
+  .forecast-daily-title{
+    margin-bottom: 2rem;
+  }
+
   .hours-btn {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    margin: 2rem 0rem 1rem 0rem;
+    margin: 2rem 0rem 2rem 0rem;
   }
 
 
@@ -607,4 +612,95 @@ body {
   .info-icon {
     width: 70%;
     margin-left: 15%;
+  }
+
+
+  /* Forecast daily */
+  .days > *{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .days > div > div:first-child {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .days > div > div:nth-child(2) {
+    margin-bottom: 0.4rem;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .days > div > div:nth-child(3) {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+/* Forecast hourly */
+
+.forecast-hourly{
+    margin: 2rem 0rem 2rem 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+.hours-grp > div {
+    width: 8.5rem;
+    height: 16.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hours-grp > div > div:first-child {
+    margin-bottom: 2rem;
+
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.hours-grp > div > div:nth-child(2) {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* Media queries */
+
+@media (max-width: 1600px) {
+    body {
+    padding: 7rem;
+    
+    }
+
+    html{
+        font-size: 56.25%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    body {
+    padding: 6rem;
+  
+    }
+
+    html{
+
+        font-size: 50%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    body {
+    padding: 4rem;
+    
+    }
+    html{
+        font-size: 40%;
+    }
   }

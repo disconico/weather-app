@@ -8,7 +8,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'My Weather',
       myPageHeader: 'Hello friend',
-      template: './src/index.html',
+      template: './src/template.html',
     }),
   ],
   devtool: 'inline-source-map',
