@@ -2,13 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'My Weather',
       myPageHeader: 'Hello friend',
       template: './src/template.html',
+      favicon: '.src/assets/images/weather-app.png',
     }),
   ],
   devtool: 'inline-source-map',
