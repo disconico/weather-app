@@ -557,7 +557,8 @@ body {
 
 
   .weather-info {
-    max-width: 55%;
+    max-width: 20%;
+    min-width: 20%;
   }
 
   .weather-info_description {
@@ -579,6 +580,11 @@ body {
     font-weight: 600;
   }
 
+.weather-info_icon {
+    justify-content: center;
+    align-items: center;
+}
+
   .weather-info_temperature {
     margin-bottom: 0.2rem;
     margin-top: 2rem;
@@ -586,6 +592,15 @@ body {
     font-size: 6rem;
     font-weight: 700;
   }
+
+  .weather-details-container {
+    max-width: 20%;
+    min-width: 20%;
+    display: flex;
+    flex-direction: column;
+padding-left: 10%;
+  }
+  
 
   .weather-details {
     margin-bottom: 3rem;
@@ -611,7 +626,7 @@ body {
 
   .info-icon {
     width: 70%;
-    margin-left: 15%;
+    max-width: 120px;
   }
 
 
@@ -704,3 +719,49 @@ body {
         font-size: 40%;
     }
   }
+
+  .quote {
+    max-width: 45%;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .quote-text {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .quote-author {
+    font-size: 1.5rem;
+    font-style: italic;
+   align-self: flex-end;
+  }
+
+  /* Footer */
+.footer {
+    height: 60px;
+    display: flex;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-top: 3px solid var(--golden-color);
+    margin-bottom: -6rem;
+
+    font-size: 1.5rem;
+}
+
+.footer img {
+    
+    transition: transform 0.25s ease-in-out;
+    height: 2rem;
+    content: url(./assets/images/github-icon.png);
+}
+
+.footer img:hover {
+    transform: rotate(360deg) scale(1.3);
+}

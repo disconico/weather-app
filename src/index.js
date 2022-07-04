@@ -27,7 +27,7 @@ searchBtn.addEventListener('click', async () => {
 });
 
 window.addEventListener('load', async () => {
-  const cityCoordinates = await data.getCoordinates('Montreal');
+  const cityCoordinates = await data.getCoordinates('Paris');
   const weatherData = await data.getData(cityCoordinates);
   display.renderWeather(weatherData, cityCoordinates);
   slider.showBlock(1);

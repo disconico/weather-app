@@ -41,10 +41,10 @@ const display = (() => {
     // Side display
     cityFeels.textContent = `${Math.round(weatherData.current.feels_like)} °C`;
     cityHumidity.textContent = `${weatherData.current.humidity} %`;
-    if (`${weatherData.daily[0].rain}` === 'undefined') {
+    if (`${weatherData.daily[0].pop}` === 'undefined') {
       cityRain.textContent = 'n.a.';
     } else {
-      cityRain.textContent = `${weatherData.daily[0].rain} %`;
+      cityRain.textContent = `${weatherData.daily[0].pop * 100} %`;
     }
     cityWind.textContent = `${Math.round(
       weatherData.current.wind_speed * 3.6
@@ -193,7 +193,7 @@ const display = (() => {
     const quoteText = document.querySelector('.quote-text');
     const quoteAuthor = document.querySelector('.quote-author');
 
-    quoteText.textContent = `${selectedQuote.text}`;
+    quoteText.textContent = `"${selectedQuote.text}"`;
     quoteAuthor.textContent = `${selectedQuote.author}`;
   }
 
